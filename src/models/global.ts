@@ -1,5 +1,5 @@
 // 全局共享数据示例
-import { DEFAULT_NAME } from '@/constants';
+const DEFAULT_NAME = 'Umi Max';
 import { useState } from 'react';
 
 const useUser = () => {

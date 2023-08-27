@@ -11,25 +11,20 @@ export default defineConfig({
   },
   routes: [
     {
-      path: '/',
-      redirect: '/home',
-    },
-    {
-      name: '首页',
-      path: '/home',
-      component: './Home',
-    },
-    {
-      name: '权限演示',
-      path: '/access',
-      component: './Access',
-    },
-    {
-      name: ' CRUD 示例',
-      path: '/table',
-      component: './Table',
+      name: '登录页',
+      path: '/login',
+      component: './LoginPage',
     },
   ],
+  proxy: {
+    '/api/v1': {
+      changeOrigin: true,
+      target: 'http://localhost:8080/',
+    },
+    '/resources': {
+      changeOrigin: true,
+      target: 'http://localhost:8080/',
+    },
+  },
   npmClient: 'pnpm',
 });
-
