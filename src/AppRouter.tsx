@@ -23,7 +23,7 @@ import { useEffect, useLayoutEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { LoginAuthRoute } from './LoginAuthRoute';
 import { StorageKeys } from './globalConstants';
 import useI18NPrefix from './hooks/useI18NPrefix';
@@ -73,15 +73,15 @@ export function AppRouter() {
         >
           <meta name="description" content="Data Art" />
         </Helmet>
-        <Switch>
-          <Route path="/setup" component={LazySetupPage} />
-          <Route path="/login" component={LazyLoginPage} />
-          <Route path="/register" component={LazyRegisterPage} />
-          <Route path="/activation" component={LazyActivationPage} />
-          <Route path="/forgetPassword" component={LazyForgetPasswordPage} />
-          <Route path="/authorization" component={LazyAuthorizationPage} />
+        <Routes>
+          <Route path="/setup" Component={LazySetupPage} />
+          <Route path="/login" Component={LazyLoginPage} />
+          <Route path="/register" Component={LazyRegisterPage} />
+          <Route path="/activation" Component={LazyActivationPage} />
+          <Route path="/forgetPassword" Component={LazyForgetPasswordPage} />
+          <Route path="/authorization" Component={LazyAuthorizationPage} />
           <LoginAuthRoute />
-        </Switch>
+        </Routes>
         <GlobalStyles />
       </BrowserRouter>
     </ConfigProvider>

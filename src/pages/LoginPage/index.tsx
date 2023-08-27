@@ -26,12 +26,13 @@ import {
 } from '@/slice/selectors';
 import { getOauth2Clients, login } from '@/slice/thunks';
 import { useCallback, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { useAppDispatch } from '@/redux/hooks';
 import { useNavigate } from 'react-router-dom';
 import { LoginForm } from './LoginForm';
 
 export function LoginPage() {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const systemInfo = useSelector(selectSystemInfo);
   const loading = useSelector(selectLoginLoading);

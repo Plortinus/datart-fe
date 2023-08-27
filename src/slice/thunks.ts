@@ -20,7 +20,7 @@ import { StorageKeys } from '@/globalConstants';
 import { removeToken, setToken, setTokenExpiration } from '@/utils/auth';
 import { request2 } from '@/utils/request';
 import { errorHandle } from '@/utils/utils';
-import { createAsyncThunk } from '@reduxjs/toolkit';
+import { createAsyncThunk, configureStore } from '@reduxjs/toolkit';
 import { appActions } from '.';
 import {
   LoginParams,
