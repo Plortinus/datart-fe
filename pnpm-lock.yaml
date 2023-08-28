@@ -90,8 +90,8 @@ dependencies:
     specifier: ^2.29.4
     version: 2.29.4
   monaco-editor:
-    specifier: 0.41.0
-    version: 0.41.0
+    specifier: 0.39.0
+    version: 0.39.0
   polished:
     specifier: ^4.2.2
     version: 4.2.2
@@ -148,13 +148,13 @@ dependencies:
     version: 13.2.0(i18next@23.4.6)(react-dom@18.2.0)(react@18.2.0)
   react-monaco-editor:
     specifier: 0.54.0
-    version: 0.54.0(@types/react@18.2.21)(monaco-editor@0.41.0)(react@18.2.0)
+    version: 0.54.0(@types/react@18.2.21)(monaco-editor@0.39.0)(react@18.2.0)
   react-quill:
     specifier: 2.0.0
     version: 2.0.0(react-dom@18.2.0)(react@18.2.0)
   react-redux:
     specifier: ^8.1.2
-    version: 8.1.2(@types/react-dom@18.2.7)(@types/react@18.2.21)(react-dom@18.2.0)(react@18.2.0)(redux@3.7.2)
+    version: 8.1.2(@types/react-dom@18.2.7)(@types/react@18.2.21)(react-dom@18.2.0)(react@18.2.0)(redux@4.2.1)
   react-resizable:
     specifier: ^3.0.5
     version: 3.0.5(react-dom@18.2.0)(react@18.2.0)
@@ -3378,7 +3378,7 @@ packages:
     dependencies:
       immer: 9.0.21
       react: 18.2.0
-      react-redux: 8.1.2(@types/react-dom@18.2.7)(@types/react@18.2.21)(react-dom@18.2.0)(react@18.2.0)(redux@3.7.2)
+      react-redux: 8.1.2(@types/react-dom@18.2.7)(@types/react@18.2.21)(react-dom@18.2.0)(react@18.2.0)(redux@4.2.1)
       redux: 4.2.1
       redux-thunk: 2.4.2(redux@4.2.1)
       reselect: 4.1.8
@@ -4439,7 +4439,7 @@ packages:
       axios: 0.27.2
       babel-plugin-import: 1.13.8
       dayjs: 1.11.9
-      dva-core: 2.0.4(redux@3.7.2)
+      dva-core: 2.0.4(redux@4.2.1)
       dva-immer: 1.0.1(dva@2.5.0-beta.2)
       dva-loading: 3.0.24(dva-core@2.0.4)
       event-emitter: 0.3.5
@@ -6419,7 +6419,7 @@ packages:
       warning: 3.0.0
     dev: false
 
-  /dva-core@2.0.4(redux@3.7.2):
+  /dva-core@2.0.4(redux@4.2.1):
     resolution: {integrity: sha512-Zh39llFyItu9HKXKfCZVf9UFtDTcypdAjGBew1S+wK8BGVzFpm1GPTdd6uIMeg7O6STtCvt2Qv+RwUut1GFynA==}
     peerDependencies:
       redux: 4.x
@@ -6429,7 +6429,7 @@ packages:
       global: 4.4.0
       invariant: 2.2.4
       is-plain-object: 2.0.4
-      redux: 3.7.2
+      redux: 4.2.1
       redux-saga: 0.16.2
       warning: 3.0.0
     dev: false
@@ -6450,7 +6450,7 @@ packages:
       dva-core: ^1.1.0 || ^1.5.0-0 || ^1.6.0-0
     dependencies:
       '@babel/runtime': 7.22.11
-      dva-core: 2.0.4(redux@3.7.2)
+      dva-core: 2.0.4(redux@4.2.1)
     dev: false
 
   /dva@2.5.0-beta.2(react-dom@18.2.0)(react@18.2.0):
@@ -9034,8 +9034,8 @@ packages:
     resolution: {integrity: sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w==}
     dev: false
 
-  /monaco-editor@0.41.0:
-    resolution: {integrity: sha512-1o4olnZJsiLmv5pwLEAmzHTE/5geLKQ07BrGxlF4Ri/AXAc2yyDGZwHjiTqD8D/ROKUZmwMA28A+yEowLNOEcA==}
+  /monaco-editor@0.39.0:
+    resolution: {integrity: sha512-zhbZ2Nx93tLR8aJmL2zI1mhJpsl87HMebNBM6R8z4pLfs8pj604pIVIVwyF1TivcfNtIPpMXL+nb3DsBmE/x6Q==}
     dev: false
 
   /moo@0.5.2:
@@ -11608,7 +11608,7 @@ packages:
     resolution: {integrity: sha512-alTKsjEL0dKH/ru1Iyn7vliS2QRcBp9zZPGoWxUOvRGWPUYgjo+V01is7p04It6KhgrzhJGnIj9GgX8W4bZoCQ==}
     dev: false
 
-  /react-monaco-editor@0.54.0(@types/react@18.2.21)(monaco-editor@0.41.0)(react@18.2.0):
+  /react-monaco-editor@0.54.0(@types/react@18.2.21)(monaco-editor@0.39.0)(react@18.2.0):
     resolution: {integrity: sha512-9JwO69851mfpuhYLHlKbae7omQWJ/2ICE2lbL0VHyNyZR8rCOH7440u+zAtDgiOMpLwmYdY1sEZCdRefywX6GQ==}
     peerDependencies:
       '@types/react': '>=16 <= 18'
@@ -11616,7 +11616,7 @@ packages:
       react: '>=16 <= 18'
     dependencies:
       '@types/react': 18.2.21
-      monaco-editor: 0.41.0
+      monaco-editor: 0.39.0
       prop-types: 15.8.1
       react: 18.2.0
     dev: false
@@ -11671,40 +11671,6 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       react-is: 17.0.2
-    dev: false
-
-  /react-redux@8.1.2(@types/react-dom@18.2.7)(@types/react@18.2.21)(react-dom@18.2.0)(react@18.2.0)(redux@3.7.2):
-    resolution: {integrity: sha512-xJKYI189VwfsFc4CJvHqHlDrzyFTY/3vZACbE+rr/zQ34Xx1wQfB4OTOSeOSNrF6BDVe8OOdxIrAnMGXA3ggfw==}
-    peerDependencies:
-      '@types/react': ^16.8 || ^17.0 || ^18.0
-      '@types/react-dom': ^16.8 || ^17.0 || ^18.0
-      react: ^16.8 || ^17.0 || ^18.0
-      react-dom: ^16.8 || ^17.0 || ^18.0
-      react-native: '>=0.59'
-      redux: ^4 || ^5.0.0-beta.0
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-      '@types/react-dom':
-        optional: true
-      react-dom:
-        optional: true
-      react-native:
-        optional: true
-      redux:
-        optional: true
-    dependencies:
-      '@babel/runtime': 7.22.11
-      '@types/hoist-non-react-statics': 3.3.1
-      '@types/react': 18.2.21
-      '@types/react-dom': 18.2.7
-      '@types/use-sync-external-store': 0.0.3
-      hoist-non-react-statics: 3.3.2
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-      react-is: 18.2.0
-      redux: 3.7.2
-      use-sync-external-store: 1.2.0(react@18.2.0)
     dev: false
 
   /react-redux@8.1.2(@types/react-dom@18.2.7)(@types/react@18.2.21)(react-dom@18.2.0)(react@18.2.0)(redux@4.2.1):
