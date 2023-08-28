@@ -30,10 +30,10 @@ import { ChartDatasetMeta } from '@/types/ChartDataSet';
 import ChartDataView from '@/types/ChartDataView';
 import { DeltaStatic } from 'quill';
 import { Layout } from 'react-grid-layout';
-import { IFontDefault } from '../../../../../../types';
-import { ChartDataSectionField } from '../../../../../types/ChartConfig';
-import { View } from '../../../../../types/View';
-import { PageInfo } from '../../../../MainPage/pages/ViewPage/slice/types';
+import { IFontDefault } from '@/types';
+import { ChartDataSectionField } from '@/types/ChartConfig';
+import { View } from '@/types/View';
+import { PageInfo } from '@/pages/MainPage/pages/ViewPage/slice/types';
 import {
   BorderStyleType,
   LAYOUT_COLS_KEYS,

@@ -27,7 +27,7 @@ export interface I18NComponentProps {
   i18nPrefix?: string;
 }
 
-export function prefixI18N(key) {
+export function prefixI18N(key: any) {
   return i18n.t(key);
 }
 

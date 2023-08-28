@@ -8,15 +8,6 @@ interface LayoutWithBrandProps {
   children?: ReactNode;
 }
 
-export function LayoutWithBrand({ className, children }: LayoutWithBrandProps) {
-  return (
-    <Layout {...(className && { className })}>
-      <Brand />
-      {children}
-    </Layout>
-  );
-}
-
 const Layout = styled.div`
   position: absolute;
   top: 0;
@@ -32,3 +23,12 @@ const Layout = styled.div`
     margin-top: ${SPACE_TIMES(20)};
   }
 `;
+
+export function LayoutWithBrand({ className, children }: LayoutWithBrandProps) {
+  return (
+    <Layout {...(className && { className })}>
+      <Brand />
+      {children}
+    </Layout>
+  );
+}

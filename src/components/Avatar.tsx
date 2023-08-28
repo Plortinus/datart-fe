@@ -2,6 +2,13 @@ import { Avatar as AntdAvatar, AvatarProps } from 'antd';
 import { CSSProperties, useState } from 'react';
 import styled from 'styled-components/macro';
 
+const StyledAvatar = styled(AntdAvatar)`
+  &.ant-avatar {
+    color: ${(p) => p.theme.textColorLight};
+    background-color: ${(p) => p.theme.emphasisBackground};
+  }
+`;
+
 export function Avatar(props: AvatarProps) {
   let style: CSSProperties = {};
   let { src, size, ...rest } = props;
@@ -23,10 +30,3 @@ export function Avatar(props: AvatarProps) {
     </StyledAvatar>
   );
 }
-
-const StyledAvatar = styled(AntdAvatar)`
-  &.ant-avatar {
-    color: ${(p) => p.theme.textColorLight};
-    background-color: ${(p) => p.theme.emphasisBackground};
-  }
-`;

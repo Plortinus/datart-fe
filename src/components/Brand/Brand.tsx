@@ -8,15 +8,6 @@ import {
 } from '@/styles/StyleConstants';
 import styled from 'styled-components';
 
-export function Brand() {
-  return (
-    <Header>
-      <img src={logo} alt="logo" />
-      <h1>datart</h1>
-    </Header>
-  );
-}
-
 const Header = styled.header`
   display: flex;
   align-items: center;
@@ -33,3 +24,12 @@ const Header = styled.header`
     height: 56px;
   }
 `;
+
+export function Brand() {
+  return (
+    <Header>
+      <img src={logo} alt="logo" />
+      <h1>datart</h1>
+    </Header>
+  );
+}

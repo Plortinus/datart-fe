@@ -44,6 +44,54 @@ interface LoginFormProps {
   onLogin?: (value: any) => void;
 }
 
+const Links = styled.div`
+display: flex;
+`;
+
+const LinkButton = styled(Link)`
+flex: 1;
+line-height: ${LINE_HEIGHT_ICON_LG};
+
+&:nth-child(2) {
+  text-align: right;
+}
+`;
+
+const AuthTitle = styled.p`
+line-height: ${LINE_HEIGHT_ICON_XXL};
+color: ${(p) => p.theme.textColorLight};
+text-align: center;
+`;
+
+const AuthButton = styled(Button)`
+margin-bottom: ${SPACE_XS};
+
+&:last-child {
+  margin-bottom: 0;
+}
+`;
+
+const UserPanel = styled.div`
+display: flex;
+padding: ${SPACE_MD};
+margin: ${SPACE_MD} 0;
+cursor: pointer;
+background-color: ${(p) => p.theme.bodyBackground};
+border-radius: ${BORDER_RADIUS};
+
+&:hover {
+  background-color: ${(p) => p.theme.emphasisBackground};
+}
+
+p {
+  flex: 1;
+}
+
+span {
+  color: ${(p) => p.theme.textColorLight};
+}
+`;
+
 export function LoginForm({
   loading,
   loggedInUser,
@@ -66,54 +114,6 @@ export function LoginForm({
   const onSwitch = useCallback(() => {
     setSwitchUser(true);
   }, []);
-
-  const Links = styled.div`
-  display: flex;
-`;
-
-  const LinkButton = styled(Link)`
-  flex: 1;
-  line-height: ${LINE_HEIGHT_ICON_LG};
-
-  &:nth-child(2) {
-    text-align: right;
-  }
-`;
-
-  const AuthTitle = styled.p`
-  line-height: ${LINE_HEIGHT_ICON_XXL};
-  color: ${(p) => p.theme.textColorLight};
-  text-align: center;
-`;
-
-  const AuthButton = styled(Button)`
-  margin-bottom: ${SPACE_XS};
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-`;
-
-  const UserPanel = styled.div`
-  display: flex;
-  padding: ${SPACE_MD};
-  margin: ${SPACE_MD} 0;
-  cursor: pointer;
-  background-color: ${(p) => p.theme.bodyBackground};
-  border-radius: ${BORDER_RADIUS};
-
-  &:hover {
-    background-color: ${(p) => p.theme.emphasisBackground};
-  }
-
-  p {
-    flex: 1;
-  }
-
-  span {
-    color: ${(p) => p.theme.textColorLight};
-  }
-`;
 
   const toAuthClient = useCallback(
     (clientUrl: string) => () => {
