@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-import { defaultLazyLoad } from 'utils/loadable';
+import { defaultLazyLoad } from '@/utils/loadable';
 
 export const LazyLoginPage = defaultLazyLoad(
   () => import('./index'),
-  (module) => module.LoginPage,
+  (module: { LoginPage: any; }) => module.LoginPage,
 );

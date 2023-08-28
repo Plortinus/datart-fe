@@ -31,7 +31,7 @@ import { getToken } from '@/utils/auth';
 import persistence from '@/utils/persistence';
 import { Button, Form, Input } from 'antd';
 import { useCallback, useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components/macro';
 import { AUTH_CLIENT_ICON_MAPPING } from './constants';
 
@@ -41,7 +41,7 @@ interface LoginFormProps {
   oauth2Clients: Array<{ name: string; value: string }>;
   registerEnable?: boolean;
   inShare?: boolean;
-  onLogin?: (value) => void;
+  onLogin?: (value: any) => void;
 }
 
 export function LoginForm({
@@ -53,22 +53,70 @@ export function LoginForm({
   onLogin,
 }: LoginFormProps) {
   const [switchUser, setSwitchUser] = useState(false);
-  const history = useHistory();
+  const navigate = useNavigate();
   const [form] = Form.useForm();
   const logged = !!getToken();
   const t = usePrefixI18N('login');
   const tg = usePrefixI18N('global');
 
   const toApp = useCallback(() => {
-    history.replace('/');
+    navigate('/');
   }, [history]);
 
   const onSwitch = useCallback(() => {
     setSwitchUser(true);
   }, []);
 
+  const Links = styled.div`
+  display: flex;
+`;
+
+  const LinkButton = styled(Link)`
+  flex: 1;
+  line-height: ${LINE_HEIGHT_ICON_LG};
+
+  &:nth-child(2) {
+    text-align: right;
+  }
+`;
+
+  const AuthTitle = styled.p`
+  line-height: ${LINE_HEIGHT_ICON_XXL};
+  color: ${(p) => p.theme.textColorLight};
+  text-align: center;
+`;
+
+  const AuthButton = styled(Button)`
+  margin-bottom: ${SPACE_XS};
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+`;
+
+  const UserPanel = styled.div`
+  display: flex;
+  padding: ${SPACE_MD};
+  margin: ${SPACE_MD} 0;
+  cursor: pointer;
+  background-color: ${(p) => p.theme.bodyBackground};
+  border-radius: ${BORDER_RADIUS};
+
+  &:hover {
+    background-color: ${(p) => p.theme.emphasisBackground};
+  }
+
+  p {
+    flex: 1;
+  }
+
+  span {
+    color: ${(p) => p.theme.textColorLight};
+  }
+`;
+
   const toAuthClient = useCallback(
-    (clientUrl) => () => {
+    (clientUrl: string) => () => {
       if (inShare) {
         persistence.session.save(
           StorageKeys.AuthRedirectUrl,
@@ -167,51 +215,3 @@ export function LoginForm({
     </AuthLayout.Form>
   );
 }
-
-const Links = styled.div`
-  display: flex;
-`;
-
-const LinkButton = styled(Link)`
-  flex: 1;
-  line-height: ${LINE_HEIGHT_ICON_LG};
-
-  &:nth-child(2) {
-    text-align: right;
-  }
-`;
-
-const AuthTitle = styled.p`
-  line-height: ${LINE_HEIGHT_ICON_XXL};
-  color: ${(p) => p.theme.textColorLight};
-  text-align: center;
-`;
-
-const AuthButton = styled(Button)`
-  margin-bottom: ${SPACE_XS};
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-`;
-
-const UserPanel = styled.div`
-  display: flex;
-  padding: ${SPACE_MD};
-  margin: ${SPACE_MD} 0;
-  cursor: pointer;
-  background-color: ${(p) => p.theme.bodyBackground};
-  border-radius: ${BORDER_RADIUS};
-
-  &:hover {
-    background-color: ${(p) => p.theme.emphasisBackground};
-  }
-
-  p {
-    flex: 1;
-  }
-
-  span {
-    color: ${(p) => p.theme.textColorLight};
-  }
-`;

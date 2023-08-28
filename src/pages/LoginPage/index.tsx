@@ -44,7 +44,7 @@ export function LoginPage() {
   }, [dispatch]);
 
   const onLogin = useCallback(
-    (values) =>
+    (values: any) =>
       dispatch(
         login({
           params: values,

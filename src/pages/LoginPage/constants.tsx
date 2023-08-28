@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+import React from 'react';
 import {
   AlipayCircleOutlined,
   AliyunOutlined,
@@ -32,7 +32,12 @@ import {
   ZhihuOutlined,
 } from '@ant-design/icons';
 
-export const AUTH_CLIENT_ICON_MAPPING = {
+interface AuthClientIcon {
+  [key: string]: React.JSX.Element;
+}
+
+
+export const AUTH_CLIENT_ICON_MAPPING: AuthClientIcon = {
   github: <GithubOutlined />,
   dingding: <DingdingOutlined />,
   qq: <QqOutlined />,
